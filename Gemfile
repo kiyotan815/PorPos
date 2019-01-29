@@ -8,7 +8,6 @@ gem 'rails', '~> 5.2.2'
 gem 'aws-sdk'
 gem 'aws-sdk-s3'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'bootstrap-sass'
 gem 'breadcrumbs_on_rails'
 gem 'carrierwave'
 gem 'coffee-rails', '~> 4.2'
