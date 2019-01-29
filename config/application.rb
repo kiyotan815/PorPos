@@ -11,6 +11,7 @@ module Porpos
     config.active_record.default_timezone = :local
     config.i18n.default_locale = :ja
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    config.generators.template_engine = :slim
     config.assets.initialize_on_precompile = false
     config.autoload_paths += %W[
       #{config.root}/lib
