@@ -7,7 +7,7 @@ html
     = csp_meta_tag
     = csrf_meta_tags
   body
-    - if notice
+    -if notice
       p.alert.alert-notice = notice
     - if alert
       p.alert.alert-danger = alert

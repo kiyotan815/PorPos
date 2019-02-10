@@ -3,6 +3,5 @@ Rails.application.routes.draw do
     registrations: "user/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
-  root :to => 'portfolios#index'
   root 'portfolios#index'
 end
