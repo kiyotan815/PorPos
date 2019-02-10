@@ -14,4 +14,5 @@
 //= require activestorage
 //= require turbolinks
 //= require uikit/dist/js/uikit
+//= require uikit/dist/js/uikit-icons.min
 //= require jquery/dist/jquery

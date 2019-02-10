@@ -9,8 +9,12 @@ html
   body
     = render 'layouts/header'
     -if notice
-      p.alert.alert-notice = notice
+      .uk-alert-primary uk-alert=""
+        a.uk-alert-close uk-close=""
+        p = notice
     - if alert
-      p.alert.alert-danger = alert
+      .uk-alert-danger uk-alert=""
+        a.uk-alert-close uk-close=""
+        p = alert
     == yield
     = render 'layouts/footer'
