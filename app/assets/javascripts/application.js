@@ -15,4 +15,3 @@
 //= require turbolinks
 //= require uikit/dist/js/uikit
 //= require jquery/dist/jquery
-//= require_tree .
