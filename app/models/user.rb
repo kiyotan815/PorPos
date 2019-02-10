@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
     :recoverable,  :rememberable, :validatable,
-    :omniauthable, :confirmable,  :omniauth_providers: %i(github)
+    :omniauthable, :confirmable, omniauth_providers: %i(github)
 
   def self.create_unique_string
     SecureRandom.uuid
