@@ -11,6 +11,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'breadcrumbs_on_rails'
 gem 'carrierwave'
 gem 'devise'
+gem 'dotenv-rails'
 gem 'fog-aws'
 gem 'high_voltage'
 gem 'font-awesome-rails'
