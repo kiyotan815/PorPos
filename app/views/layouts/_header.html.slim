@@ -1,0 +1,10 @@
+header
+  div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar"
+    nav#pc-header.uk-padding-large.uk-padding-remove-vertical.uk-navbar-container.uk-hidden-touch uk-navbar=""
+      .uk-navbar-left
+        = link_to root_path, class: 'uk-navbar-item uk-logo', data: {"turbolinks" => false} do
+          strong Porpos
+      .uk-navbar-right
+        ul.uk-navbar-nav
+          li = link_to "案件一覧", "#", class: "nav-link text-white"
+          li = link_to "M&Aとは？", "#", class: "nav-link text-white"

@@ -7,8 +7,10 @@ html
     = csp_meta_tag
     = csrf_meta_tags
   body
+    = render 'layouts/header'
     -if notice
       p.alert.alert-notice = notice
     - if alert
       p.alert.alert-danger = alert
     == yield
+    = render 'layouts/footer'
