@@ -5,7 +5,7 @@ class CreatePortfolios < ActiveRecord::Migration[5.2]
       t.text :description
       t.text :url
       t.text :repository
-      t.user :references
+      t.references :user
 
       t.timestamps
     end
