@@ -1,0 +1,47 @@
+.uk-section.uk-section-xlarge.uk-light.uk-background-cover#topimage
+  .uk-container.uk-text-center
+    h1.uk-heading-hero Porpos!
+    h3.subtitle ポートフォリオ投稿サイト
+.uk-section.uk-section-muted
+  .uk-container.uk-text-center
+    h2 新着
+    div class="uk-child-width-1-3@m" uk-grid=""
+      - @portfolios.each do |portfolio|
+        div
+          .uk-card.uk-card-default
+            .uk-card-media-top
+            .uk-card-body
+              h3.uk-card-title = portfolio.title
+              p = portfolio.description
+              p = portfolio.user.name
+.uk-section.uk-section-muted.uk-padding-remove-top
+  .uk-container.uk-text-center
+    h2 人気
+    div class="uk-child-width-1-3@m" uk-grid=""
+      - @portfolios.each do |portfolio|
+        div
+          .uk-card.uk-card-default
+            .uk-card-media-top
+            .uk-card-body
+              h3.uk-card-title = portfolio.title
+              p = portfolio.description
+              p = portfolio.user.name
+.uk-section
+  .uk-container
+    div class="uk-child-width-1-2@m" uk-grid=""
+      div
+        h3 PorPos
+      div
+        h3 Porposとは？
+        p
+          | PorPosPorPos PorPos PorPos PorPos PorPos PorPos PorPos
+          | PorPos PorPos PorPos PorPosPorPos PorPos PorPos PorPos
+          | PorPos PorPos PorPos PorPos PorPos PorPos
+          | PorPos PorPos PorPos PorPos PorPos PorPos
+          | PorPos PorPos PorPos PorPos PorPos PorPos
+          | PorPos PorPos PorPos PorPos PorPos PorPos
+          | PorPos PorPos PorPos PorPos PorPos PorPos
+          | PorPos PorPos PorPos PorPos PorPos PorPos
+          | PorPos PorPos PorPos PorPos PorPos PorPos
+          | PorPos PorPos PorPos PorPos PorPos PorPos
+          | PorPos PorPos PorPos PorPos PorPos PorPos

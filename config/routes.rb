@@ -4,5 +4,5 @@ Rails.application.routes.draw do
     registrations: "user/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
-  root 'portfolios#index'
+  root 'portfolios#top'
 end
