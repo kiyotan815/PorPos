@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @portfolio.title
+p
+  strong Description:
+  = @portfolio.description
+p
+  strong Url:
+  = @portfolio.url
+p
+  strong Repository:
+  = @portfolio.repository
+p
+  strong References:
+  = @portfolio.references
+
+=> link_to 'Edit', edit_portfolio_path(@portfolio)
+'|
+=< link_to 'Back', portfolios_path
