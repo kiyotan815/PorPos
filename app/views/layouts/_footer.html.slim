@@ -1,0 +1,17 @@
+footer.uk-section.uk-section-secondary
+  .uk-container.uk-text-muted>
+    h2
+      = link_to root_path, class: "uk-logo uk-text-primary" do
+        span.uk-margin-small-right uk-icon="icon: world; ratio: 2"
+        | PorPos
+    hr
+    .uk-section.uk-section-xsmall.footer_links
+      ul.uk-link-reset.uk-text-small.uk-child-width-auto uk-grid=""
+        li = link_to "Porposとは？", "#"
+        li = link_to "プライバシーポリシー", page_path('privacy')
+        li = link_to "利用規約", "#"
+        li = link_to "お問い合わせ"
+    .uk-section.footer-subscription.uk-padding-remove-vertical
+      p.uk-text-right
+        a href="#"
+          Back to top

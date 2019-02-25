@@ -1,0 +1,16 @@
+header
+  div.uk-navbar-container#main-header uk-sticky="sel-target;  cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar"
+    nav.uk-navbar-container
+    .uk-container
+        div uk-navbar=""
+          .uk-navbar-left
+            = link_to root_path, class: 'uk-navbar-item uk-logo', data: {"turbolinks" => false} do
+              strong Porpos
+          .uk-navbar-right
+            ul.uk-navbar-nav
+              li = link_to "使い方", page_path('how_to')
+              - if user_signed_in?
+                li = link_to current_user.name, "#"
+                li = link_to "ログアウト", destroy_user_session_path, method: :delete
+              - else
+                li = link_to "githubでログイン", user_github_omniauth_authorize_path
