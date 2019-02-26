@@ -6,17 +6,13 @@
         - @portfolio.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :description
-    = f.text_area :description
-  .field
-    = f.label :url
-    = f.text_area :url
-  .field
-    = f.label :repository
-    = f.text_area :repository
-  .field
-    = f.submit
+  .uk-margin
+    = f.text_field :title, class: "uk-input", placeholder: "タイトル"
+  .uk-margin
+    = f.text_area :description, class: "uk-textarea", placeholder: "詳細", rows: 4
+  .uk-margin
+    = f.text_field :url, class: "uk-input", placeholder: "URL"
+  .uk-margin
+    = f.text_field :repository, class: "uk-input", placeholder: "githubRepository"
+  .uk-margin
+    = f.submit class: "uk-button uk-button-primary"
