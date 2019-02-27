@@ -1,5 +1,7 @@
 class PortfoliosController < ApplicationController
-  before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
+  before_action :set_portfolio, only: %i[show edit update destroy]
+  before_action :authenticate_github_user!, only: %i[ new edit create update destroy]
+  before_action :correct_user, only: %i[edit update destroy]
 
   # GET /portfolios
   # GET /portfolios.json
@@ -10,6 +12,7 @@ class PortfoliosController < ApplicationController
 
   def index
     @portfolios = Portfolio.all
+    redirect_to root_path
   end
 
   # GET /portfolios/1
@@ -61,7 +64,7 @@ class PortfoliosController < ApplicationController
   def destroy
     @portfolio.destroy
     respond_to do |format|
-      format.html { redirect_to portfolios_url, notice: 'Portfolio was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Portfolio was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -74,6 +77,11 @@ class PortfoliosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def portfolio_params
-      params.require(:portfolio).permit(:title, :description, :url, :repository, :references)
+      params.require(:portfolio).permit(:title, :description, :url, :repository, :references, :image, :remove_image)
+    end
+
+    def correct_user
+      @portfolio = current_user.portfolios.find_by(id: params[:id])
+      redirect_to root_path if @portfolio.nil?
     end
 end

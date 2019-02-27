@@ -1,83 +1,27 @@
 .uk-section.uk-section-muted
   .uk-container
+    h2 = @portfolio.title
     div class="uk-child-width-1-1 uk-child-width-1-2@m" uk-grid=""
       .portfolio-image
-        h3
-          |test image
-          |test image
-          |test image
-          |test image
-          |test image
-          |test image
-          |test image
-          |test image
-          |test image
-
-      .portfolio-image
-        h3.uk-text-break
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
-          |apple
+        = image_tag @portfolio.image.url
+      .aaa
+        table.uk-table.uk-table-divider.uk-table-responsive
+          tbody
+            tr
+              th.uk-width-small タイトル
+              td = @portfolio.title
+            - unless @portfolio.url.blank?
+              tr
+                th URL
+                td = @portfolio.url
+            - unless @portfolio.repository.blank?
+              tr
+                th github
+                td = @portfolio.repository
+            tr
+              th.uk-text-top 説明
+              td.uk-text-break = @portfolio.description
+        - if current_user?(@portfolio.user)
+          p.uk-text-right
+            = link_to "編集", edit_portfolio_path(@portfolio), class: "uk-margin-right"
+            = link_to "削除", portfolio_path(@portfolio), method: :delete, data: { confirm: "#{@portfolio.title} を削除しますか？" }

@@ -8,3 +8,22 @@
 .subtitle {
   font-color: white;
 }
+
+.card-image {
+  width: 100%;
+  height: 220px;
+}
+
+.card-title {
+  overflow: hidden;
+  line-height: 24px;
+  height: 48px;
+}
+
+th {
+  background: white;
+  font-weight: bold;
+}
+td {
+  background: white;
+}
