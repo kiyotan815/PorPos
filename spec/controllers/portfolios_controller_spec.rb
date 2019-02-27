@@ -58,9 +58,15 @@ RSpec.describe PortfoliosController, type: :controller do
   end
 
   describe "GET #new" do
-    it "returns a success response" do
-      get :new, params: {}, session: valid_session
-      expect(response).to be_successful
+    context "as an authenticate user" do
+      before do
+        @user = FactoryBot.create(:user)
+      end
+      it "returns a success response" do
+        sign_in @user
+        get :new, params: {}, session: valid_session
+        expect(response).to be_successful
+      end
     end
   end
 
