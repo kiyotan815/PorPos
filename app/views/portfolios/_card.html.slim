@@ -1,10 +1,11 @@
 .uk-card.uk-card-default.uk-card-small.uk-box-shadow-hover-large#portfolio-card
   = link_to portfolio, class: "uk-link-reset", data: { "turbolinks" => false} do
     .uk-card-media-top.card-thumbnail
+      = image_tag portfolio.image.card_thumb.url, class: "card-image"
     .uk-card-body.uk-text-left
       .uk-grid-collapse.uk-child-width-1-2 uk-grid=""
         .category_label
-      h3.cart-titke.uk-card-title.uk-text-secondary.uk-margin.uk-text-break
+      h3.card-title.uk-card-title.uk-text-secondary.uk-margin.uk-text-break
         = portfolio.title
       p.uk-text-truncate
         = portfolio.description
