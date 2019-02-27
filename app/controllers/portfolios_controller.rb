@@ -5,7 +5,7 @@ class PortfoliosController < ApplicationController
   # GET /portfolios.json
   #
   def top
-    @portfolios = Portfolio.all.limit(3)
+    @portfolios = Portfolio.all
   end
 
   def index
