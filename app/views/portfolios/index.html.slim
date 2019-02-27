@@ -6,24 +6,24 @@
   .uk-container.uk-text-center
     h2 新着
     div class="uk-child-width-1-3@m" uk-grid=""
-      - 3.times
+      - @portfolios.each do |portfolio|
         div
           .uk-card.uk-card-default
             .uk-card-media-top
             .uk-card-body
-              h3.uk-card-title Media Top
-              p Loremipsum dododododo
+              h3.uk-card-title = portfolio.title
+              p = portfolio.description
 .uk-section.uk-section-muted.uk-padding-remove-top
   .uk-container.uk-text-center
     h2 人気
     div class="uk-child-width-1-3@m" uk-grid=""
-      - 3.times
+      - @portfolios.each do |portfolio|
         div
           .uk-card.uk-card-default
             .uk-card-media-top
             .uk-card-body
-              h3.uk-card-title Media Top
-              p Loremipsum dododododo
+              h3.uk-card-title = portfolio.title
+              p = portfolio.description
 .uk-section
   .uk-container
     div class="uk-child-width-1-2@m" uk-grid=""

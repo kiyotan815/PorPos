@@ -10,11 +10,12 @@
       - @portfolios.each do |portfolio|
         div
           .uk-card.uk-card-default
-            .uk-card-media-top
-            .uk-card-body
-              h3.uk-card-title = portfolio.title
-              p = portfolio.description
-              p = portfolio.user.name
+            = link_to portfolio do
+              .uk-card-media-top
+              .uk-card-body
+                h3.uk-card-title = portfolio.title
+                p.uk-text-break = portfolio.description
+                p = portfolio.user.name
 .uk-section.uk-section-muted.uk-padding-remove-top
   .uk-container.uk-text-center
     h2 人気
@@ -22,11 +23,12 @@
       - @portfolios.each do |portfolio|
         div
           .uk-card.uk-card-default
-            .uk-card-media-top
-            .uk-card-body
-              h3.uk-card-title = portfolio.title
-              p = portfolio.description
-              p = portfolio.user.name
+            = link_to portfolio do
+              .uk-card-media-top
+              .uk-card-body
+                h3.uk-card-title = portfolio.title
+                p.uk-text-break = portfolio.description
+                p = portfolio.user.name
 .uk-section
   .uk-container
     div class="uk-child-width-1-2@m" uk-grid=""
