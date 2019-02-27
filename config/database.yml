@@ -10,8 +10,10 @@ development:
   <<: *default
   database: porpos_development
 
-  <<: *default
-  database: porpos_test
 
 production:
   password: <%= ENV['DATABASE_URL'] %>
+
+test:
+  <<: *default
+  database: porpos_test
