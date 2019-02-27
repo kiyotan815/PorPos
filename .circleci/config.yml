@@ -20,6 +20,15 @@ jobs:
     steps:
       - checkout
 
+      - run:
+          name: Install System Dependencies
+          command: |
+           sudo apt-get update
+           sudo apt-get install -y libappindicator1 fonts-liberation
+           export CHROME_BIN=/usr/bin/google-chrome
+           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+           sudo dpkg -i google-chrome*.deb
+
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -28,6 +37,10 @@ jobs:
           - v1-dependencies-
 
       - run:
+          name: yarn install
+          command: |
+            yarn
+      - run:
           name: install dependencies
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
@@ -35,8 +48,8 @@ jobs:
       - save_cache:
           paths:
             - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-      
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}-{{ checksum "yarn.lock" }}
+
       - run:
           name: Wait for DB
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 120s
